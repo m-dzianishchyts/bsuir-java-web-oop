@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:major="https://www.appliances.by/xml/schema"
+            xmlns:types="https://www.appliances.by/xml/types"
+            targetNamespace="https://www.appliances.by/xml/schema">
+    <xsd:import namespace="https://www.appliances.by/xml/types" schemaLocation="types.xsd"/>
+
+    <xsd:element name="appliances" type="major:appliances"/>
+
+    <xsd:complexType name="appliances">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="fridge" type="types:fridge"/>
+            <xsd:element name="washingMachine" type="types:washingMachine"/>
+            <xsd:element name="vacuumCleaner" type="types:vacuumCleaner"/>
+            <xsd:element name="kettle" type="types:kettle"/>
+            <xsd:element name="television" type="types:television"/>
+            <xsd:element name="laptop" type="types:laptop"/>
+            <xsd:element name="smartphone" type="types:smartphone"/>
+        </xsd:choice>
+    </xsd:complexType>
+</xsd:schema>
