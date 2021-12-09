@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:types="https://www.appliances.by/xml/types"
+            xmlns:minor="https://www.appliances.by/xml/minor"
+            targetNamespace="https://www.appliances.by/xml/types">
+    <xsd:import namespace="https://www.appliances.by/xml/minor" schemaLocation="minor.xsd"/>
+
+    <xsd:complexType name="appliance" abstract="true">
+        <xsd:sequence>
+            <xsd:element name="measurements" type="types:measurements"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="minor:modelInfo"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="batteryAppliance" abstract="true">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="battery" type="types:batteryInfo"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="vacuumCleaner">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="dustCollectorVolume" type="xsd:float"/>
+                    <xsd:element name="suctionPower" type="xsd:int"/>
+                    <xsd:element name="noiseLevel" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="television">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="powerConsumption" type="xsd:int"/>
+                    <xsd:element name="hasHdr" type="xsd:boolean"/>
+                    <xsd:element name="hasHdmi" type="xsd:boolean"/>
+                    <xsd:element name="hasSmartTv" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="laptop">
+        <xsd:complexContent>
+            <xsd:extension base="types:batteryAppliance">
+                <xsd:sequence>
+                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="operatingSystem" type="minor:operatingSystem" nillable="true"/>
+                    <xsd:element name="cpuFrequency" type="xsd:int"/>
+                    <xsd:element name="ramCapacity" type="xsd:int"/>
+                    <xsd:element name="storageCapacity" type="xsd:int"/>
+                    <xsd:element name="hasTouchScreen" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="smartphone">
+        <xsd:complexContent>
+            <xsd:extension base="types:batteryAppliance">
+                <xsd:sequence>
+                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="operatingSystem" type="minor:operatingSystem"/>
+                    <xsd:element name="ramCapacity" type="xsd:int"/>
+                    <xsd:element name="storageCapacity" type="xsd:int"/>
+                    <xsd:element name="cameraResolution" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="kettle">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="volume" type="xsd:float"/>
+                    <xsd:element name="hasTemperatureRegulator" type="xsd:boolean"/>
+                    <xsd:element name="hasTimer" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="fridge">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="volume" type="xsd:int"/>
+                    <xsd:element name="hasFreezer" type="xsd:boolean"/>
+                    <xsd:element name="hasNoFrost" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="washingMachine">
+        <xsd:complexContent>
+            <xsd:extension base="types:appliance">
+                <xsd:sequence>
+                    <xsd:element name="maxLoad" type="xsd:int"/>
+                    <xsd:element name="maxSpinSpeed" type="xsd:int"/>
+                    <xsd:element name="hasDrying" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="measurements">
+        <xsd:attributeGroup ref="minor:measurements"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="batteryInfo">
+        <xsd:attributeGroup ref="minor:batteryInfo"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="screen">
+        <xsd:attributeGroup ref="minor:screenInfo"/>
+    </xsd:complexType>
+</xsd:schema>

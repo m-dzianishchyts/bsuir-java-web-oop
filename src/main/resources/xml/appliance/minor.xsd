@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:minor="https://www.appliances.by/xml/minor"
+            targetNamespace="https://www.appliances.by/xml/minor">
+
+    <xsd:attributeGroup name="measurements">
+        <xsd:attribute name="height" type="xsd:float" use="required"/>
+        <xsd:attribute name="width" type="xsd:float" use="required"/>
+        <xsd:attribute name="depth" type="xsd:float" use="required"/>
+        <xsd:attribute name="weight" type="xsd:float" use="required"/>
+    </xsd:attributeGroup>
+
+    <xsd:attributeGroup name="modelInfo">
+        <xsd:attribute name="id" type="xsd:int" use="required"/>
+        <xsd:attribute name="manufacturer" type="xsd:string" use="required"/>
+        <xsd:attribute name="model" type="xsd:string" use="required"/>
+        <xsd:attribute name="price" type="xsd:decimal" use="required"/>
+    </xsd:attributeGroup>
+
+    <xsd:attributeGroup name="batteryInfo">
+        <xsd:attribute name="capacity" type="xsd:int" use="required"/>
+        <xsd:attribute name="batteryLife" type="xsd:float" use="required"/>
+    </xsd:attributeGroup>
+
+    <xsd:attributeGroup name="screenInfo">
+        <xsd:attribute name="resolution" type="minor:resolution" use="required"/>
+        <xsd:attribute name="diagonal" type="xsd:float" use="required"/>
+    </xsd:attributeGroup>
+
+    <xsd:simpleType name="resolution">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d+x\d+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="operatingSystem">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Windows"/>
+            <xsd:enumeration value="macOS"/>
+            <xsd:enumeration value="Ubuntu"/>
+            <xsd:enumeration value="Chrome OS"/>
+            <xsd:enumeration value="Linux"/>
+            <xsd:enumeration value="Android"/>
+            <xsd:enumeration value="iOS"/>
+            <xsd:enumeration value="DOS"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

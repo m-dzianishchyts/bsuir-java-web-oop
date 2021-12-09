@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<major:appliances xmlns:major="https://www.appliances.by/xml/schema">
+    <fridge id="1" manufacturer="Indesit" model="TIA 140" price="499.00">
+        <measurements height="145" width="60" depth="66" weight="52"/>
+        <volume>245</volume>
+        <hasFreezer>true</hasFreezer>
+        <hasNoFrost>false</hasNoFrost>
+    </fridge>
+    <fridge id="2" manufacturer="Beko" model="CSMV5335MC0S" price="899.00">
+        <measurements height="145" width="60" depth="66" weight="32"/>
+        <volume>245</volume>
+        <hasFreezer>true</hasFreezer>
+        <hasNoFrost>false</hasNoFrost>
+    </fridge>
+    <fridge id="3" manufacturer="LG" model="GA-B419SLGL" price="1359.00">
+        <measurements height="190.7" width="59.5" depth="65.5" weight="66"/>
+        <volume>302</volume>
+        <hasFreezer>true</hasFreezer>
+        <hasNoFrost>true</hasNoFrost>
+    </fridge>
+    <television id="4" manufacturer="Horizont" model="32LE5511D" price="539.00">
+        <measurements height="47.1" width="73" depth="18.5" weight="3.8"/>
+        <screen resolution="1366x768" diagonal="32"/>
+        <powerConsumption>30</powerConsumption>
+        <hasHdr>false</hasHdr>
+        <hasHdmi>true</hasHdmi>
+        <hasSmartTv>false</hasSmartTv>
+    </television>
+    <television id="5" manufacturer="Blaupunkt" model="43FE265T" price="919.00">
+        <measurements height="64" width="96.6" depth="20.9" weight="6.5"/>
+        <screen resolution="1920x1080" diagonal="43"/>
+        <powerConsumption>74</powerConsumption>
+        <hasHdr>true</hasHdr>
+        <hasHdmi>true</hasHdmi>
+        <hasSmartTv>true</hasSmartTv>
+    </television>
+    <television id="6" manufacturer="Xiaomi" model='MI TV 4S 55" / L55M5-5ARU' price="1535.00">
+        <measurements height="76.73" width="123.16" depth="26.43" weight="12.45"/>
+        <screen resolution="3840x2160" diagonal="55"/>
+        <powerConsumption>120</powerConsumption>
+        <hasHdr>true</hasHdr>
+        <hasHdmi>true</hasHdmi>
+        <hasSmartTv>true</hasSmartTv>
+    </television>
+    <vacuumCleaner id="7" manufacturer="Deerma" model="DX700" price="129.00">
+        <measurements height="112" width="28.8" depth="26" weight="2.2"/>
+        <dustCollectorVolume>0.8</dustCollectorVolume>
+        <suctionPower>211</suctionPower>
+        <noiseLevel>75</noiseLevel>
+    </vacuumCleaner>
+    <vacuumCleaner id="8" manufacturer="Samsung" model="SC18M21B0S2 (VC18M21B0S2/EV)" price="229.00">
+        <measurements height="24.3" width="27.2" depth="39.8" weight="4.6"/>
+        <dustCollectorVolume>1.5</dustCollectorVolume>
+        <suctionPower>380</suctionPower>
+        <noiseLevel>87</noiseLevel>
+    </vacuumCleaner>
+    <vacuumCleaner id="9" manufacturer="Bosch" model="BWD41720" price="629.00">
+        <measurements height="31.2" width="32.8" depth="55.9" weight="10.4"/>
+        <dustCollectorVolume>4</dustCollectorVolume>
+        <suctionPower>450</suctionPower>
+        <noiseLevel>85</noiseLevel>
+    </vacuumCleaner>
+    <laptop id="10" manufacturer="Lenovo" model="IdeaPad 3 15ITL6 (82H800PHRE)" price="1599.00">
+        <measurements height="1.99" width="35.92" depth="23.65" weight="1.65"/>
+        <battery capacity="4050" batteryLife="7.5"/>
+        <screen resolution="1920x1080" diagonal="15.6"/>
+        <operatingSystem>DOS</operatingSystem>
+        <cpuFrequency>3000</cpuFrequency>
+        <ramCapacity>8</ramCapacity>
+        <storageCapacity>256</storageCapacity>
+        <hasTouchScreen>false</hasTouchScreen>
+    </laptop>
+    <laptop id="11" manufacturer="Asus" model="ROG Strix G15 G513QE-HN029" price="3499.00">
+        <measurements height="2.72" width="35.4" depth="25.9" weight="2.3"/>
+        <battery capacity="8100" batteryLife="12"/>
+        <screen resolution="1920x1080" diagonal="15.6"/>
+        <operatingSystem>DOS</operatingSystem>
+        <cpuFrequency>3300</cpuFrequency>
+        <ramCapacity>16</ramCapacity>
+        <storageCapacity>512</storageCapacity>
+        <hasTouchScreen>false</hasTouchScreen>
+    </laptop>
+    <laptop id="12" manufacturer="HP" model="Envy x360 15-ee0003ur (15C92EA)" price="2699.00">
+        <measurements height="1.89" width="35.8" depth="23.0" weight="2.0"/>
+        <battery capacity="4600" batteryLife="11.5"/>
+        <screen resolution="1920x1080" diagonal="15.6"/>
+        <operatingSystem>Windows</operatingSystem>
+        <cpuFrequency>2300</cpuFrequency>
+        <ramCapacity>8</ramCapacity>
+        <storageCapacity>256</storageCapacity>
+        <hasTouchScreen>true</hasTouchScreen>
+    </laptop>
+    <smartphone id="13" manufacturer="Xiaomi " model="Redmi 9 3GB/32GB" price="359.00">
+        <measurements height="0.91" width="7.7" depth="16.33" weight="0.198"/>
+        <battery capacity="5020" batteryLife="50"/>
+        <screen resolution="2340x1080" diagonal="6.53"/>
+        <operatingSystem>Android</operatingSystem>
+        <ramCapacity>3</ramCapacity>
+        <storageCapacity>32</storageCapacity>
+        <cameraResolution>13</cameraResolution>
+    </smartphone>
+    <smartphone id="14" manufacturer="Apple" model="iPhone 12 Mini 64GB / MGDX3" price="2299.00">
+        <measurements height="0.74" width="6.42" depth="13.15" weight="0.133"/>
+        <battery capacity="2277" batteryLife="15"/>
+        <screen resolution="2340x1080" diagonal="5.4"/>
+        <operatingSystem>iOS</operatingSystem>
+        <ramCapacity>4</ramCapacity>
+        <storageCapacity>64</storageCapacity>
+        <cameraResolution>12</cameraResolution>
+    </smartphone>
+    <smartphone id="15" manufacturer="Samsung" model="Galaxy S20 FE 128GB / SM-G780GZWMSER" price="1749.00">
+        <measurements height="0.84" width="7.45" depth="15.98" weight="0.190"/>
+        <battery capacity="4500" batteryLife="18.2"/>
+        <screen resolution="2400x1080" diagonal="6.5"/>
+        <operatingSystem>Android</operatingSystem>
+        <ramCapacity>6</ramCapacity>
+        <storageCapacity>128</storageCapacity>
+        <cameraResolution>12</cameraResolution>
+    </smartphone>
+    <kettle id="16" manufacturer="FIRST Austria" model="FA-5409-4" price="27.00">
+        <measurements height="24" width="17" depth="14" weight="0.7"/>
+        <volume>1.8</volume>
+        <hasTemperatureRegulator>false</hasTemperatureRegulator>
+        <hasTimer>false</hasTimer>
+    </kettle>
+    <kettle id="17" manufacturer="Holt " model="HT-KT-001" price="79.00">
+        <measurements height="26" width="20" depth="18" weight="1.1"/>
+        <volume>2</volume>
+        <hasTemperatureRegulator>true</hasTemperatureRegulator>
+        <hasTimer>false</hasTimer>
+    </kettle>
+    <kettle id="18" manufacturer="Redmond" model="SkyKettle RK-G203S" price="181.90">
+        <measurements height="22.5" width="20" depth="15.5" weight="1.0"/>
+        <volume>2</volume>
+        <hasTemperatureRegulator>true</hasTemperatureRegulator>
+        <hasTimer>true</hasTimer>
+    </kettle>
+    <washingMachine id="19" manufacturer="Indesit" model="IWSB 50851 BY" price="499.00">
+        <measurements height="85" width="59.5" depth="40" weight="62.5"/>
+        <maxLoad>5</maxLoad>
+        <maxSpinSpeed>800</maxSpinSpeed>
+        <hasDrying>false</hasDrying>
+    </washingMachine>
+    <washingMachine id="20" manufacturer="LG" model="Steam F2J5NS6W" price="999.00">
+        <measurements height="85" width="60" depth="45.5" weight="60"/>
+        <maxLoad>6</maxLoad>
+        <maxSpinSpeed>1200</maxSpinSpeed>
+        <hasDrying>false</hasDrying>
+    </washingMachine>
+    <washingMachine id="21" manufacturer="Samsung" model="WD70T4047CE/LP" price="1399.00">
+        <measurements height="85" width="60" depth="55" weight="63"/>
+        <maxLoad>7</maxLoad>
+        <maxSpinSpeed>1400</maxSpinSpeed>
+        <hasDrying>true</hasDrying>
+    </washingMachine>
+</major:appliances>
