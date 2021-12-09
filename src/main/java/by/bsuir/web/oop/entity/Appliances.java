@@ -83,4 +83,11 @@ public class Appliances {
         }
         return applianceList;
     }
+
+    /**
+     * Sets the value of the appliances property.
+     */
+    public void setAppliancesList(List<Appliance> applianceList) {
+        this.applianceList = applianceList;
+    }
 }
