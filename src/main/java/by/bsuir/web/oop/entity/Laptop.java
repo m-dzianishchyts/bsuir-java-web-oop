@@ -148,6 +148,12 @@ public class Laptop extends BatteryAppliance {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), screen, operatingSystem, cpuFrequency, ramCapacity, storageCapacity,
+                            hasTouchScreen);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -165,12 +171,6 @@ public class Laptop extends BatteryAppliance {
                && hasTouchScreen == laptop.hasTouchScreen
                && Objects.equals(screen, laptop.screen)
                && operatingSystem == laptop.operatingSystem;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), screen, operatingSystem, cpuFrequency, ramCapacity, storageCapacity,
-                            hasTouchScreen);
     }
 
     @Override
