@@ -60,7 +60,8 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
 
         Predicate<Appliance> criteriaPredicate = null;
         if (criteria.getTypeName() != null) {
-            criteriaPredicate = appliance -> appliance.getClass().getSimpleName().equals(criteria.getTypeName());
+            criteriaPredicate = appliance -> appliance.getClass().getSimpleName()
+                                                      .equalsIgnoreCase(criteria.getTypeName());
         }
         Map<String, Object> criteriaMap = criteria.getCriteriaMap();
         for (Map.Entry<String, Object> entry : criteriaMap.entrySet()) {
