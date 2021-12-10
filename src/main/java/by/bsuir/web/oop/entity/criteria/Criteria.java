@@ -25,7 +25,7 @@ public class Criteria {
      * @param criterionName  criterion name
      * @param criterionValue criterion value
      */
-    public Criteria consider(String criterionName, Object criterionValue) {
+    public static Criteria consider(String criterionName, Object criterionValue) {
         return new Criteria(null).alsoConsider(criterionName, criterionValue);
     }
 
@@ -34,7 +34,7 @@ public class Criteria {
      *
      * @param typeName - objects type name
      */
-    public Criteria consider(String typeName) {
+    public static Criteria consider(String typeName) {
         return new Criteria(typeName);
     }
 
