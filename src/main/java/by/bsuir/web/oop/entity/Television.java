@@ -31,7 +31,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "television", propOrder = {
+@XmlType(name = ApplianceTypes.TELEVISION, propOrder = {
         "screen",
         ApplianceProperties.POWER_CONSUMPTION,
         ApplianceProperties.HAS_HDR,

@@ -32,7 +32,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "laptop", propOrder = {
+@XmlType(name = ApplianceTypes.LAPTOP, propOrder = {
         "screen",
         ApplianceProperties.OPERATING_SYSTEM,
         ApplianceProperties.CPU_FREQUENCY,

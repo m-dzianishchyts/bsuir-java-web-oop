@@ -29,7 +29,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "washingMachine", propOrder = {
+@XmlType(name = ApplianceTypes.WASHING_MACHINE, propOrder = {
         ApplianceProperties.MAX_LOAD,
         ApplianceProperties.MAX_SPIN_SPEED,
         ApplianceProperties.HAS_DRYING

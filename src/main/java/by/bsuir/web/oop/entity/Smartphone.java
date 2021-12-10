@@ -31,7 +31,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "smartphone", propOrder = {
+@XmlType(name = ApplianceTypes.SMARTPHONE, propOrder = {
         "screen",
         ApplianceProperties.OPERATING_SYSTEM,
         ApplianceProperties.RAM_CAPACITY,

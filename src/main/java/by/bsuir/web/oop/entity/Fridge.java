@@ -28,7 +28,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "fridge", propOrder = {
+@XmlType(name = ApplianceTypes.FRIDGE, propOrder = {
         ApplianceProperties.VOLUME,
         ApplianceProperties.HAS_FREEZER,
         ApplianceProperties.HAS_NO_FROST

@@ -28,7 +28,7 @@ import java.util.StringJoiner;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "vacuumCleaner", propOrder = {
+@XmlType(name = ApplianceTypes.VACUUM_CLEANER, propOrder = {
         ApplianceProperties.DUST_COLLECTOR_VOLUME,
         ApplianceProperties.SUCTION_POWER,
         ApplianceProperties.NOISE_LEVEL
