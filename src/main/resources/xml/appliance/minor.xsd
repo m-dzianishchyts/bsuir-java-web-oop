@@ -3,18 +3,30 @@
             xmlns:minor="https://www.appliances.by/xml/minor"
             targetNamespace="https://www.appliances.by/xml/minor">
 
-    <xsd:attributeGroup name="measurements">
-        <xsd:attribute name="height" type="xsd:float" use="required"/>
-        <xsd:attribute name="width" type="xsd:float" use="required"/>
-        <xsd:attribute name="depth" type="xsd:float" use="required"/>
-        <xsd:attribute name="weight" type="xsd:float" use="required"/>
-    </xsd:attributeGroup>
+    <xsd:complexType name="measurements">
+        <xsd:attributeGroup ref="minor:measurements"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="batteryInfo">
+        <xsd:attributeGroup ref="minor:batteryInfo"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="screen">
+        <xsd:attributeGroup ref="minor:screenInfo"/>
+    </xsd:complexType>
 
     <xsd:attributeGroup name="modelInfo">
         <xsd:attribute name="id" type="xsd:int" use="required"/>
         <xsd:attribute name="manufacturer" type="xsd:string" use="required"/>
         <xsd:attribute name="model" type="xsd:string" use="required"/>
         <xsd:attribute name="price" type="xsd:decimal" use="required"/>
+    </xsd:attributeGroup>
+
+    <xsd:attributeGroup name="measurements">
+        <xsd:attribute name="height" type="xsd:float" use="required"/>
+        <xsd:attribute name="width" type="xsd:float" use="required"/>
+        <xsd:attribute name="depth" type="xsd:float" use="required"/>
+        <xsd:attribute name="weight" type="xsd:float" use="required"/>
     </xsd:attributeGroup>
 
     <xsd:attributeGroup name="batteryInfo">

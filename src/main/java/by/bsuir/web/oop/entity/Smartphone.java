@@ -19,7 +19,7 @@ import java.util.StringJoiner;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{https://www.appliances.by/xml/types}batteryAppliance"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="screen" type="{https://www.appliances.by/xml/types}screen"/&gt;
+ *         &lt;element name="screen" type="{https://www.appliances.by/xml/minor}screen"/&gt;
  *         &lt;element name="operatingSystem" type="{https://www.appliances.by/xml/minor}operatingSystem"/&gt;
  *         &lt;element name="ramCapacity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="storageCapacity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;

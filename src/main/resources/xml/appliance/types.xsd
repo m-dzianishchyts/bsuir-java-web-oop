@@ -7,7 +7,7 @@
 
     <xsd:complexType name="appliance" abstract="true">
         <xsd:sequence>
-            <xsd:element name="measurements" type="types:measurements"/>
+            <xsd:element name="measurements" type="minor:measurements"/>
         </xsd:sequence>
         <xsd:attributeGroup ref="minor:modelInfo"/>
     </xsd:complexType>
@@ -16,7 +16,7 @@
         <xsd:complexContent>
             <xsd:extension base="types:appliance">
                 <xsd:sequence>
-                    <xsd:element name="battery" type="types:batteryInfo"/>
+                    <xsd:element name="battery" type="minor:batteryInfo"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -38,7 +38,7 @@
         <xsd:complexContent>
             <xsd:extension base="types:appliance">
                 <xsd:sequence>
-                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="screen" type="minor:screen"/>
                     <xsd:element name="powerConsumption" type="xsd:int"/>
                     <xsd:element name="hasHdr" type="xsd:boolean"/>
                     <xsd:element name="hasHdmi" type="xsd:boolean"/>
@@ -52,7 +52,7 @@
         <xsd:complexContent>
             <xsd:extension base="types:batteryAppliance">
                 <xsd:sequence>
-                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="screen" type="minor:screen"/>
                     <xsd:element name="operatingSystem" type="minor:operatingSystem" nillable="true"/>
                     <xsd:element name="cpuFrequency" type="xsd:int"/>
                     <xsd:element name="ramCapacity" type="xsd:int"/>
@@ -67,7 +67,7 @@
         <xsd:complexContent>
             <xsd:extension base="types:batteryAppliance">
                 <xsd:sequence>
-                    <xsd:element name="screen" type="types:screen"/>
+                    <xsd:element name="screen" type="minor:screen"/>
                     <xsd:element name="operatingSystem" type="minor:operatingSystem"/>
                     <xsd:element name="ramCapacity" type="xsd:int"/>
                     <xsd:element name="storageCapacity" type="xsd:int"/>
@@ -111,17 +111,5 @@
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
-    </xsd:complexType>
-
-    <xsd:complexType name="measurements">
-        <xsd:attributeGroup ref="minor:measurements"/>
-    </xsd:complexType>
-
-    <xsd:complexType name="batteryInfo">
-        <xsd:attributeGroup ref="minor:batteryInfo"/>
-    </xsd:complexType>
-
-    <xsd:complexType name="screen">
-        <xsd:attributeGroup ref="minor:screenInfo"/>
     </xsd:complexType>
 </xsd:schema>

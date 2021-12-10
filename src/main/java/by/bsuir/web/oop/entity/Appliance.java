@@ -21,7 +21,7 @@ import java.util.StringJoiner;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="measurements" type="{https://www.appliances.by/xml/types}measurements"/&gt;
+ *         &lt;element name="measurements" type="{https://www.appliances.by/xml/minor}measurements"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attGroup ref="{https://www.appliances.by/xml/minor}modelInfo"/&gt;
  *     &lt;/restriction&gt;
