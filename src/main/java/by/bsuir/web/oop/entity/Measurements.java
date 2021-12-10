@@ -27,13 +27,13 @@ import java.util.StringJoiner;
 @XmlType(name = "measurements")
 public class Measurements {
 
-    @XmlAttribute(name = "height", required = true)
+    @XmlAttribute(name = ApplianceProperties.HEIGHT, required = true)
     protected float height;
-    @XmlAttribute(name = "width", required = true)
+    @XmlAttribute(name = ApplianceProperties.WIDTH, required = true)
     protected float width;
-    @XmlAttribute(name = "depth", required = true)
+    @XmlAttribute(name = ApplianceProperties.DEPTH, required = true)
     protected float depth;
-    @XmlAttribute(name = "weight", required = true)
+    @XmlAttribute(name = ApplianceProperties.WEIGHT, required = true)
     protected float weight;
 
     /**

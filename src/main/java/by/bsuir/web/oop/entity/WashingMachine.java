@@ -30,12 +30,11 @@ import java.util.StringJoiner;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "washingMachine", propOrder = {
-        "maxLoad",
-        "maxSpinSpeed",
-        "hasDrying"
+        ApplianceProperties.MAX_LOAD,
+        ApplianceProperties.MAX_SPIN_SPEED,
+        ApplianceProperties.HAS_DRYING
 })
-public class WashingMachine
-        extends Appliance {
+public class WashingMachine extends Appliance {
 
     @XmlElement(required = true)
     protected int maxLoad;

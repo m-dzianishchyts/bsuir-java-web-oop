@@ -34,14 +34,13 @@ import java.util.StringJoiner;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "laptop", propOrder = {
         "screen",
-        "operatingSystem",
-        "cpuFrequency",
-        "ramCapacity",
-        "storageCapacity",
-        "hasTouchScreen"
+        ApplianceProperties.OPERATING_SYSTEM,
+        ApplianceProperties.CPU_FREQUENCY,
+        ApplianceProperties.RAM_CAPACITY,
+        ApplianceProperties.STORAGE_CAPACITY,
+        ApplianceProperties.HAS_TOUCH_SCREEN
 })
-public class Laptop
-        extends BatteryAppliance {
+public class Laptop extends BatteryAppliance {
 
     @XmlElement(required = true)
     protected Screen screen;

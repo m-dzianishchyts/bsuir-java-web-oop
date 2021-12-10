@@ -28,12 +28,11 @@ import java.util.StringJoiner;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "kettle", propOrder = {
-        "volume",
-        "hasTemperatureRegulator",
-        "hasTimer"
+        ApplianceProperties.VOLUME,
+        ApplianceProperties.HAS_TEMPERATURE_REGULATOR,
+        ApplianceProperties.HAS_TIMER
 })
-public class Kettle
-        extends Appliance {
+public class Kettle extends Appliance {
 
     protected float volume;
     protected boolean hasTemperatureRegulator;

@@ -33,13 +33,12 @@ import java.util.StringJoiner;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "television", propOrder = {
         "screen",
-        "powerConsumption",
-        "hasHdr",
-        "hasHdmi",
-        "hasSmartTv"
+        ApplianceProperties.POWER_CONSUMPTION,
+        ApplianceProperties.HAS_HDR,
+        ApplianceProperties.HAS_HDMI,
+        ApplianceProperties.HAS_SMART_TV
 })
-public class Television
-        extends Appliance {
+public class Television extends Appliance {
 
     @XmlElement(required = true)
     protected Screen screen;

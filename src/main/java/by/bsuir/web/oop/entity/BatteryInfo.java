@@ -27,9 +27,9 @@ import java.util.StringJoiner;
 @XmlType(name = "batteryInfo")
 public class BatteryInfo {
 
-    @XmlAttribute(name = "capacity", required = true)
+    @XmlAttribute(name = ApplianceProperties.CAPACITY, required = true)
     protected int capacity;
-    @XmlAttribute(name = "batteryLife", required = true)
+    @XmlAttribute(name = ApplianceProperties.BATTERY_LIFE, required = true)
     protected float batteryLife;
 
     /**

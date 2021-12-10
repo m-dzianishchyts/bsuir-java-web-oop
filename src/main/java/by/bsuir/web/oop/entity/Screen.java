@@ -27,9 +27,9 @@ import java.util.StringJoiner;
 @XmlType(name = "screen")
 public class Screen {
 
-    @XmlAttribute(name = "resolution", required = true)
+    @XmlAttribute(name = ApplianceProperties.RESOLUTION, required = true)
     protected String resolution;
-    @XmlAttribute(name = "diagonal", required = true)
+    @XmlAttribute(name = ApplianceProperties.DIAGONAL, required = true)
     protected float diagonal;
 
     /**

@@ -45,13 +45,13 @@ public abstract class Appliance {
 
     @XmlElement(required = true)
     protected Measurements measurements;
-    @XmlAttribute(name = "id", required = true)
+    @XmlAttribute(name = ApplianceProperties.ID, required = true)
     protected int id;
-    @XmlAttribute(name = "manufacturer", required = true)
+    @XmlAttribute(name = ApplianceProperties.MANUFACTURER, required = true)
     protected String manufacturer;
-    @XmlAttribute(name = "model", required = true)
+    @XmlAttribute(name = ApplianceProperties.MODEL, required = true)
     protected String model;
-    @XmlAttribute(name = "price", required = true)
+    @XmlAttribute(name = ApplianceProperties.PRICE, required = true)
     protected BigDecimal price;
 
     /**

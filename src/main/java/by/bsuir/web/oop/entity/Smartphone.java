@@ -33,13 +33,12 @@ import java.util.StringJoiner;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "smartphone", propOrder = {
         "screen",
-        "operatingSystem",
-        "ramCapacity",
-        "storageCapacity",
-        "cameraResolution"
+        ApplianceProperties.OPERATING_SYSTEM,
+        ApplianceProperties.RAM_CAPACITY,
+        ApplianceProperties.STORAGE_CAPACITY,
+        ApplianceProperties.CAMERA_RESOLUTION
 })
-public class Smartphone
-        extends BatteryAppliance {
+public class Smartphone extends BatteryAppliance {
 
     @XmlElement(required = true)
     protected Screen screen;
@@ -132,6 +131,11 @@ public class Smartphone
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), screen, operatingSystem, ramCapacity, storageCapacity, cameraResolution);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -148,11 +152,6 @@ public class Smartphone
                && cameraResolution == that.cameraResolution
                && Objects.equals(screen, that.screen)
                && operatingSystem == that.operatingSystem;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), screen, operatingSystem, ramCapacity, storageCapacity, cameraResolution);
     }
 
     @Override

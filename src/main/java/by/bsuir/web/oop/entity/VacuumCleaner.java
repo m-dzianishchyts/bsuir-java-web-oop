@@ -29,12 +29,11 @@ import java.util.StringJoiner;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "vacuumCleaner", propOrder = {
-        "dustCollectorVolume",
-        "suctionPower",
-        "noiseLevel"
+        ApplianceProperties.DUST_COLLECTOR_VOLUME,
+        ApplianceProperties.SUCTION_POWER,
+        ApplianceProperties.NOISE_LEVEL
 })
-public class VacuumCleaner
-        extends Appliance {
+public class VacuumCleaner extends Appliance {
 
     protected float dustCollectorVolume;
     @XmlElement(required = true)
