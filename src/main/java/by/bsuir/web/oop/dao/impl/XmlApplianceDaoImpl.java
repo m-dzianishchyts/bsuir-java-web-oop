@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
  */
 public class XmlApplianceDaoImpl implements ApplianceDAO {
 
+    public static final String PATH_TO_XML_FILES = "xml/appliance/appliances.xml";
     private Appliances appliances;
 
     private static List<Field> getAllDeclaredFields(Class<?> type) {
@@ -159,7 +160,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     private void loadAppliances() throws ApplianceDAOException {
-        try (InputStream inputStream = new FileInputStream("xml/appliance/appliances.xml")) {
+        try (InputStream inputStream = new FileInputStream(PATH_TO_XML_FILES)) {
             JAXBContext jaxbContext = JAXBContext.newInstance(Appliances.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             appliances = (Appliances) unmarshaller.unmarshal(inputStream);
@@ -169,7 +170,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     private void saveAppliances() throws ApplianceDAOException {
-        File outputFile = new File("xml/appliance/appliances.xml");
+        File outputFile = new File(PATH_TO_XML_FILES);
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Appliances.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
