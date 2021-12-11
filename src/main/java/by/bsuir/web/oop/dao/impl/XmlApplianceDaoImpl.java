@@ -1,7 +1,7 @@
 package by.bsuir.web.oop.dao.impl;
 
-import by.bsuir.web.oop.dao.ApplianceDAO;
-import by.bsuir.web.oop.dao.ApplianceDAOException;
+import by.bsuir.web.oop.dao.ApplianceDao;
+import by.bsuir.web.oop.dao.ApplianceDaoException;
 import by.bsuir.web.oop.entity.Appliance;
 import by.bsuir.web.oop.entity.Appliances;
 import by.bsuir.web.oop.entity.criteria.Criteria;
@@ -21,12 +21,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
- * Implementation of {@link ApplianceDAO}.
+ * Implementation of {@link ApplianceDao}.
  */
-public class XmlApplianceDaoImpl implements ApplianceDAO {
+public class XmlApplianceDaoImpl implements ApplianceDao {
 
     public static final String PATH_TO_XML_FILES = "xml/appliance/appliances.xml";
     private Appliances appliances;
@@ -45,7 +44,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     @Override
-    public synchronized List<Appliance> findAll() throws ApplianceDAOException {
+    public synchronized List<Appliance> findAll() throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
@@ -54,7 +53,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     @Override
-    public List<Appliance> findByCriteria(Criteria criteria) throws ApplianceDAOException {
+    public List<Appliance> findByCriteria(Criteria criteria) throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
@@ -82,7 +81,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     @Override
-    public synchronized Optional<Appliance> find(int id) throws ApplianceDAOException {
+    public synchronized Optional<Appliance> find(int id) throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
@@ -93,7 +92,7 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
     }
 
     @Override
-    public synchronized void save(Appliance newAppliance) throws ApplianceDAOException {
+    public synchronized void save(Appliance newAppliance) throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
@@ -101,31 +100,33 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
         boolean hasIdDuplicate = appliances.getApplianceList().stream()
                                            .anyMatch(appliance -> appliance.getId() == newAppliance.getId());
         if (hasIdDuplicate) {
-            throw new ApplianceDAOException("ID duplicate: " + newAppliance.getId());
+            throw new ApplianceDaoException("ID duplicate: " + newAppliance.getId());
         }
         appliances.getApplianceList().add(newAppliance);
         saveAppliances();
     }
 
     @Override
-    public synchronized void update(int id, Appliance updateAppliance) throws ApplianceDAOException {
+    public synchronized void update(int id, Appliance updateAppliance) throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
 
-        Map<Integer, Appliance> idApplianceMap = appliances
-                .getApplianceList().stream().collect(Collectors.toMap(Appliance::getId, appliance -> appliance));
-        if (!idApplianceMap.containsKey(id)) {
-            throw new ApplianceDAOException("ID not found: " + id);
+        boolean idExists = appliances.getApplianceList().stream()
+                                     .anyMatch(personnelFile -> personnelFile.getId() == id);
+        if (!idExists) {
+            throw new ApplianceDaoException("ID not found: " + id);
         }
-        idApplianceMap.put(id, updateAppliance);
-        List<Appliance> applianceList = idApplianceMap.values().stream().toList();
+        List<Appliance> applianceList =
+                appliances.getApplianceList().stream()
+                          .map(appliance -> appliance.getId() == id ? updateAppliance : appliance)
+                          .toList();
         appliances.setAppliancesList(applianceList);
         saveAppliances();
     }
 
     @Override
-    public synchronized void delete(int id) throws ApplianceDAOException {
+    public synchronized void delete(int id) throws ApplianceDaoException {
         if (appliances == null) {
             loadAppliances();
         }
@@ -159,24 +160,24 @@ public class XmlApplianceDaoImpl implements ApplianceDAO {
         };
     }
 
-    private void loadAppliances() throws ApplianceDAOException {
+    private void loadAppliances() throws ApplianceDaoException {
         try (InputStream inputStream = new FileInputStream(PATH_TO_XML_FILES)) {
             JAXBContext jaxbContext = JAXBContext.newInstance(Appliances.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             appliances = (Appliances) unmarshaller.unmarshal(inputStream);
         } catch (JAXBException | IOException e) {
-            throw new ApplianceDAOException(e);
+            throw new ApplianceDaoException(e);
         }
     }
 
-    private void saveAppliances() throws ApplianceDAOException {
+    private void saveAppliances() throws ApplianceDaoException {
         File outputFile = new File(PATH_TO_XML_FILES);
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Appliances.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.marshal(appliances, outputFile);
         } catch (JAXBException e) {
-            throw new ApplianceDAOException(e);
+            throw new ApplianceDaoException(e);
         }
     }
 }
